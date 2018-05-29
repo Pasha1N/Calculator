@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.result = new System.Windows.Forms.Label();
             this.numeral2 = new System.Windows.Forms.Button();
             this.numeral1 = new System.Windows.Forms.Button();
             this.divide = new System.Windows.Forms.Button();
@@ -44,20 +43,9 @@
             this.equally = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
             this.minus = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.numeral3 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // result
-            // 
-            this.result.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.result.Location = new System.Drawing.Point(2, 9);
-            this.result.Name = "result";
-            this.result.Padding = new System.Windows.Forms.Padding(20);
-            this.result.Size = new System.Drawing.Size(321, 37);
-            this.result.TabIndex = 1;
-            this.result.Text = "dfg";
-            this.result.Click += new System.EventHandler(this.result_Click);
             // 
             // numeral2
             // 
@@ -81,6 +69,7 @@
             this.numeral1.TabIndex = 3;
             this.numeral1.Text = "1";
             this.numeral1.UseVisualStyleBackColor = true;
+            this.numeral1.Click += new System.EventHandler(this.numeral1_Click);
             // 
             // divide
             // 
@@ -125,6 +114,7 @@
             this.clear.TabIndex = 7;
             this.clear.Text = "CE";
             this.clear.UseVisualStyleBackColor = true;
+            this.clear.Click += new System.EventHandler(this.clear_Click);
             // 
             // numeral7
             // 
@@ -229,15 +219,6 @@
             this.minus.Text = "-";
             this.minus.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(2, 46);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(20);
-            this.label1.Size = new System.Drawing.Size(321, 28);
-            this.label1.TabIndex = 17;
-            // 
             // numeral3
             // 
             this.numeral3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -249,12 +230,23 @@
             this.numeral3.Text = "3";
             this.numeral3.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(5, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(318, 27);
+            this.label1.TabIndex = 19;
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(328, 239);
-            this.Controls.Add(this.numeral3);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.numeral3);
             this.Controls.Add(this.minus);
             this.Controls.Add(this.add);
             this.Controls.Add(this.equally);
@@ -270,7 +262,6 @@
             this.Controls.Add(this.divide);
             this.Controls.Add(this.numeral1);
             this.Controls.Add(this.numeral2);
-            this.Controls.Add(this.result);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -280,7 +271,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label result;
         private System.Windows.Forms.Button numeral2;
         private System.Windows.Forms.Button numeral1;
         private System.Windows.Forms.Button divide;
@@ -296,8 +286,8 @@
         private System.Windows.Forms.Button equally;
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Button minus;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button numeral3;
+        private System.Windows.Forms.Label label1;
     }
 }
 

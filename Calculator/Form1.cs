@@ -34,7 +34,7 @@ namespace Calculator
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            label1.Text += "2";
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -55,6 +55,22 @@ namespace Calculator
         private void button14_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void numeral1_Click(object sender, EventArgs e)
+        {
+            label1.Text+= "1";
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clear_Click(object sender, EventArgs e)
+        {
+            label1.Text = label1.Text.Remove(0, label1.Text.Length);
         }
     }
 }
