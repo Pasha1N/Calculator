@@ -1,6 +1,6 @@
 ﻿namespace Calculator
 {
-    partial class Form1
+    partial class Canculator
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -57,7 +57,7 @@
             this.numeral2.TabIndex = 2;
             this.numeral2.Text = "2";
             this.numeral2.UseVisualStyleBackColor = true;
-            this.numeral2.Click += new System.EventHandler(this.button2_Click);
+            this.numeral2.Click += new System.EventHandler(this.Numeral2_Click);
             // 
             // numeral1
             // 
@@ -69,10 +69,11 @@
             this.numeral1.TabIndex = 3;
             this.numeral1.Text = "1";
             this.numeral1.UseVisualStyleBackColor = true;
-            this.numeral1.Click += new System.EventHandler(this.numeral1_Click);
+            this.numeral1.Click += new System.EventHandler(this.Numeral1_Click);
             // 
             // divide
             // 
+            this.divide.Enabled = false;
             this.divide.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.divide.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.divide.Location = new System.Drawing.Point(248, 77);
@@ -81,6 +82,7 @@
             this.divide.TabIndex = 4;
             this.divide.Text = "/";
             this.divide.UseVisualStyleBackColor = true;
+            this.divide.Click += new System.EventHandler(this.divide_Click);
             // 
             // numeral4
             // 
@@ -92,6 +94,7 @@
             this.numeral4.TabIndex = 5;
             this.numeral4.Text = "4";
             this.numeral4.UseVisualStyleBackColor = true;
+            this.numeral4.Click += new System.EventHandler(this.Numeral4_Click);
             // 
             // numeral5
             // 
@@ -103,6 +106,7 @@
             this.numeral5.TabIndex = 6;
             this.numeral5.Text = "5";
             this.numeral5.UseVisualStyleBackColor = true;
+            this.numeral5.Click += new System.EventHandler(this.Numeral5_Click);
             // 
             // clear
             // 
@@ -114,7 +118,7 @@
             this.clear.TabIndex = 7;
             this.clear.Text = "CE";
             this.clear.UseVisualStyleBackColor = true;
-            this.clear.Click += new System.EventHandler(this.clear_Click);
+            this.clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // numeral7
             // 
@@ -126,7 +130,7 @@
             this.numeral7.TabIndex = 8;
             this.numeral7.Text = "7";
             this.numeral7.UseVisualStyleBackColor = true;
-            this.numeral7.Click += new System.EventHandler(this.button8_Click);
+            this.numeral7.Click += new System.EventHandler(this.Numeral7_Click);
             // 
             // numeral8
             // 
@@ -138,6 +142,7 @@
             this.numeral8.TabIndex = 9;
             this.numeral8.Text = "8";
             this.numeral8.UseVisualStyleBackColor = true;
+            this.numeral8.Click += new System.EventHandler(this.Numeral8_Click);
             // 
             // numeral6
             // 
@@ -149,10 +154,11 @@
             this.numeral6.TabIndex = 10;
             this.numeral6.Text = "6";
             this.numeral6.UseVisualStyleBackColor = true;
-            this.numeral6.Click += new System.EventHandler(this.button10_Click);
+            this.numeral6.Click += new System.EventHandler(this.Numeral6_Click);
             // 
             // multiply
             // 
+            this.multiply.Enabled = false;
             this.multiply.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.multiply.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.multiply.Location = new System.Drawing.Point(248, 118);
@@ -161,6 +167,7 @@
             this.multiply.TabIndex = 11;
             this.multiply.Text = "*";
             this.multiply.UseVisualStyleBackColor = true;
+            this.multiply.Click += new System.EventHandler(this.multiply_Click);
             // 
             // numeral0
             // 
@@ -172,6 +179,7 @@
             this.numeral0.TabIndex = 12;
             this.numeral0.Text = "0";
             this.numeral0.UseVisualStyleBackColor = true;
+            this.numeral0.Click += new System.EventHandler(this.Numeral0_Click);
             // 
             // numeral9
             // 
@@ -183,10 +191,11 @@
             this.numeral9.TabIndex = 13;
             this.numeral9.Text = "9";
             this.numeral9.UseVisualStyleBackColor = true;
-            this.numeral9.Click += new System.EventHandler(this.button13_Click);
+            this.numeral9.Click += new System.EventHandler(this.Numeral9_Click);
             // 
             // equally
             // 
+            this.equally.Enabled = false;
             this.equally.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.equally.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.equally.Location = new System.Drawing.Point(167, 200);
@@ -195,10 +204,11 @@
             this.equally.TabIndex = 14;
             this.equally.Text = "=";
             this.equally.UseVisualStyleBackColor = true;
-            this.equally.Click += new System.EventHandler(this.button14_Click);
+            this.equally.Click += new System.EventHandler(this.Equally_Click);
             // 
             // add
             // 
+            this.add.Enabled = false;
             this.add.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.add.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.add.Location = new System.Drawing.Point(248, 200);
@@ -207,9 +217,11 @@
             this.add.TabIndex = 15;
             this.add.Text = "+";
             this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // minus
             // 
+            this.minus.Enabled = false;
             this.minus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.minus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.minus.Location = new System.Drawing.Point(248, 159);
@@ -218,6 +230,7 @@
             this.minus.TabIndex = 16;
             this.minus.Text = "-";
             this.minus.UseVisualStyleBackColor = true;
+            this.minus.Click += new System.EventHandler(this.minus_Click);
             // 
             // numeral3
             // 
@@ -229,6 +242,7 @@
             this.numeral3.TabIndex = 18;
             this.numeral3.Text = "3";
             this.numeral3.UseVisualStyleBackColor = true;
+            this.numeral3.Click += new System.EventHandler(this.Numeral3_Click);
             // 
             // label1
             // 
@@ -241,7 +255,7 @@
             this.label1.TabIndex = 19;
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // Form1
+            // Canculator
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(328, 239);
@@ -263,9 +277,10 @@
             this.Controls.Add(this.numeral1);
             this.Controls.Add(this.numeral2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "Form1";
+            this.Name = "Canculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
