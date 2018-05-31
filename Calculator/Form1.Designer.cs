@@ -45,6 +45,7 @@
             this.minus = new System.Windows.Forms.Button();
             this.numeral3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.buffer = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // numeral2
@@ -253,12 +254,24 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(318, 27);
             this.label1.TabIndex = 19;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // buffer
+            // 
+            this.buffer.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.buffer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buffer.Location = new System.Drawing.Point(5, 9);
+            this.buffer.Name = "buffer";
+            this.buffer.Size = new System.Drawing.Size(318, 38);
+            this.buffer.TabIndex = 20;
+            this.buffer.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // Canculator
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(328, 239);
+            this.Controls.Add(this.buffer);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numeral3);
             this.Controls.Add(this.minus);
@@ -303,6 +316,7 @@
         private System.Windows.Forms.Button minus;
         private System.Windows.Forms.Button numeral3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label buffer;
     }
 }
 

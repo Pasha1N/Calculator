@@ -12,33 +12,62 @@ namespace Calculator
 {
     public partial class Canculator : Form
     {
-        private string buffer;
-       // private IList<string> arithmeticOperations = new List<string>();
+        private string bufferString;
+
+        private IList<char> arithmeticOperations = new List<char>();
 
         public Canculator()
         {
             InitializeComponent();
 
-            //arithmeticOperations.Add("+");
-            //arithmeticOperations.Add("/");
-            //arithmeticOperations.Add("-");
-            //arithmeticOperations.Add("*");
-            //arithmeticOperations.Add("=");
+            arithmeticOperations.Add('+');
+            arithmeticOperations.Add('/');
+            arithmeticOperations.Add('-');
+            arithmeticOperations.Add('*');
         }
 
         public void AddInBuffer(string symbol)
         {
-            buffer = string.Concat(buffer, symbol);
-            label1.Text = buffer;
-
-            if (buffer != null)
+            if (bufferString != null)
             {
-                equally.Enabled = true;
                 divide.Enabled = true;
                 multiply.Enabled = true;
                 minus.Enabled = true;
                 add.Enabled = true;
             }
+
+            bufferString = string.Concat(bufferString, symbol);
+            label1.Text = bufferString;
+
+            Console.Beep();
+        }
+
+        public void AddInBuffer(char symbol)
+        {
+            int lastIndex = bufferString.Length;
+            bool addInBuffer = true;
+
+            foreach (char item in arithmeticOperations)
+            {
+                if (bufferString[lastIndex - 1] == item)
+                {
+                    bufferString = bufferString.Replace(item, symbol);
+                    buffer.Text = bufferString;
+                    buffer.Text = string.Concat(buffer.Text, bufferString);
+                    label1.Text = bufferString;
+                    addInBuffer = false;
+                    break;
+                }
+            }
+
+            if (addInBuffer)
+            {
+                AddInBuffer(symbol.ToString());
+                buffer.Text = bufferString;
+                bufferString = null;
+
+            }
+            // label1.Text = bufferString;
             Console.Beep();
         }
 
@@ -64,7 +93,7 @@ namespace Calculator
 
         private void Equally_Click(object sender, EventArgs e)
         {
-            AddInBuffer("=");
+           //AddInBuffer('=');
         }
 
         private void Numeral1_Click(object sender, EventArgs e)
@@ -79,11 +108,11 @@ namespace Calculator
 
         private void Clear_Click(object sender, EventArgs e)
         {
-            buffer = null;
-            label1.Text = buffer;
-            if (buffer == null)
+            bufferString = null;
+            label1.Text = bufferString;
+            if (bufferString == null)
             {
-                equally.Enabled = false;
+               // equally.Enabled = false;
                 divide.Enabled = false;
                 multiply.Enabled = false;
                 minus.Enabled = false;
@@ -113,7 +142,7 @@ namespace Calculator
 
         private void Numeral0_Click(object sender, EventArgs e)
         {
-            if (buffer != null)
+            if (bufferString != null)
             {
                 AddInBuffer("0");
             }
@@ -126,22 +155,26 @@ namespace Calculator
 
         private void divide_Click(object sender, EventArgs e)
         {
-            AddInBuffer("/");
+             AddInBuffer('/');
+           // AddInBuffer("/");
         }
 
         private void multiply_Click(object sender, EventArgs e)
         {
-            AddInBuffer("*");
+              AddInBuffer('*');
+           // AddInBuffer("*");
         }
 
         private void minus_Click(object sender, EventArgs e)
         {
-            AddInBuffer("-");
+             AddInBuffer('-');
+            //AddInBuffer("-");
         }
 
         private void add_Click(object sender, EventArgs e)
         {
-            AddInBuffer("+");
+            AddInBuffer('+');
+           // AddInBuffer("+");
         }
     }
 }
