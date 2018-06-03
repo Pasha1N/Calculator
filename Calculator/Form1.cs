@@ -14,21 +14,21 @@ namespace Calculator
     {
         private string bufferString;
 
-        private IList<char> arithmeticOperations = new List<char>();
+        private IList<string> arithmeticOperations = new List<string>();
 
         public Canculator()
         {
             InitializeComponent();
 
-            arithmeticOperations.Add('+');
-            arithmeticOperations.Add('/');
-            arithmeticOperations.Add('-');
-            arithmeticOperations.Add('*');
+            arithmeticOperations.Add("+");
+            arithmeticOperations.Add("/");
+            arithmeticOperations.Add("-");
+            arithmeticOperations.Add("*");
         }
 
         public void AddInBuffer(string symbol)
         {
-            if (bufferString != null)
+            if (label1.Text != null)
             {
                 divide.Enabled = true;
                 multiply.Enabled = true;
@@ -36,38 +36,33 @@ namespace Calculator
                 add.Enabled = true;
             }
 
-            bufferString = string.Concat(bufferString, symbol);
-            label1.Text = bufferString;
-
-            Console.Beep();
-        }
-
-        public void AddInBuffer(char symbol)
-        {
-            int lastIndex = bufferString.Length;
-            bool addInBuffer = true;
-
-            foreach (char item in arithmeticOperations)
+            if (buffer.Text != null)
             {
-                if (bufferString[lastIndex - 1] == item)
+                equally.Enabled = true;
+            }
+
+            bool @is = false;
+            if (!char.IsNumber(Convert.ToChar(symbol)))
+            {
+                foreach (string item in arithmeticOperations)
                 {
-                    bufferString = bufferString.Replace(item, symbol);
-                    buffer.Text = bufferString;
-                    buffer.Text = string.Concat(buffer.Text, bufferString);
-                    label1.Text = bufferString;
-                    addInBuffer = false;
-                    break;
+                    if (symbol == item)
+                    {
+                        @is = true;
+                    }
                 }
             }
 
-            if (addInBuffer)
+            if (@is)
             {
-                AddInBuffer(symbol.ToString());
-                buffer.Text = bufferString;
-                bufferString = null;
-
+                label1.Text = string.Concat(label1.Text, symbol);
+                buffer.Text = string.Concat(buffer.Text, label1.Text);
+                label1.Text = null;
             }
-            // label1.Text = bufferString;
+            else
+            {
+                label1.Text = string.Concat(label1.Text, symbol);
+            }
             Console.Beep();
         }
 
@@ -93,7 +88,27 @@ namespace Calculator
 
         private void Equally_Click(object sender, EventArgs e)
         {
-           //AddInBuffer('=');
+            //buffer.Text = "f";
+            //StringBuilder copyBuffer = new StringBuilder(buffer.Text);
+
+            //for(int i=0;i<copyBuffer.Length;i++)
+            //{
+            //    if (!char.IsNumber(Convert.ToChar(copyBuffer[i])))
+            //    {
+            //        foreach (string item in arithmeticOperations)
+            //        {
+            //            if (copyBuffer[i] == Convert.ToChar(item))
+            //            {
+
+            //            }
+            //        }
+            //    }
+
+
+            //}
+
+
+
         }
 
         private void Numeral1_Click(object sender, EventArgs e)
@@ -112,7 +127,7 @@ namespace Calculator
             label1.Text = bufferString;
             if (bufferString == null)
             {
-               // equally.Enabled = false;
+                // equally.Enabled = false;
                 divide.Enabled = false;
                 multiply.Enabled = false;
                 minus.Enabled = false;
@@ -155,26 +170,34 @@ namespace Calculator
 
         private void divide_Click(object sender, EventArgs e)
         {
-             AddInBuffer('/');
-           // AddInBuffer("/");
+            // AddInBuffer('/');
+            AddInBuffer("/");
         }
 
         private void multiply_Click(object sender, EventArgs e)
         {
-              AddInBuffer('*');
-           // AddInBuffer("*");
+            //  AddInBuffer('*');
+            AddInBuffer("*");
         }
 
         private void minus_Click(object sender, EventArgs e)
         {
-             AddInBuffer('-');
-            //AddInBuffer("-");
+            //  AddInBuffer('-');
+            AddInBuffer("-");
         }
 
         private void add_Click(object sender, EventArgs e)
         {
-            AddInBuffer('+');
-           // AddInBuffer("+");
+            // AddInBuffer('+');
+            AddInBuffer("+");
+        }
+
+        private void Canculator_KeyDown(object sender, KeyEventArgs e)
+        {
+
+
+            buffer.Text = e.KeyCode.ToString();
+            // label1.Text = e.KeyCode.ToString();
         }
     }
 }
