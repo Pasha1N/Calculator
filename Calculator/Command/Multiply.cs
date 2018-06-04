@@ -1,17 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Windows.Forms;
 
 namespace Calculator.Command
 {
-    class Multiply : ICommand
+    internal class Multiply : ICommand
     {
-        public void Executive(ConsoleKeyInfo key)
+        private Canculator canculator;
+        private string symbol = "*";
+
+        public Multiply(Canculator canculator)
         {
+            this.canculator = canculator;
+        }
 
-
+        public void Executive(Keys key)
+        {
+            if (key == Keys.Multiply)
+            {
+                canculator.AddInBuffer(symbol);
+            }
         }
     }
 }

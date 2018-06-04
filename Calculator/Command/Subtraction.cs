@@ -1,17 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Windows.Forms;
 
 namespace Calculator.Command
 {
-    class Subtraction : ICommand
+    internal class Subtraction : ICommand
     {
-        public void Executive(ConsoleKeyInfo key)
-        {
-           // ConsoleKey
+        private Canculator canculator;
+        private string symbol = "-";
 
+        public Subtraction(Canculator canculator)
+        {
+            this.canculator = canculator;
+        }
+
+        public void Executive(Keys key)
+        {
+            if (key == Keys.Subtract)
+            {
+                canculator.AddInBuffer(symbol);
+            }
         }
     }
 }

@@ -1,19 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Windows.Forms;
 
 namespace Calculator.Command
 {
-    class Add: ICommand
+    internal class Add : ICommand
     {
-        public void Executive(ConsoleKeyInfo key)
+        private Canculator canculator;
+        private string symbol = "+";
+
+        public Add(Canculator canculator)
         {
-
-
+            this.canculator = canculator;
         }
 
-
+        public void Executive(Keys key)
+        {
+            if (key == Keys.Add)
+            {
+                canculator.AddInBuffer(symbol);
+            }
+        }
     }
 }

@@ -290,6 +290,7 @@
             this.Controls.Add(this.numeral1);
             this.Controls.Add(this.numeral2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.KeyPreview = true;
             this.Name = "Canculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";

@@ -1,17 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Windows.Forms;
 
 namespace Calculator.Command
 {
-    class Numeral9 : ICommand
+    internal class Numeral9 : ICommand
     {
-        public void Executive(ConsoleKeyInfo key)
+        private Canculator canculator;
+        private string symbol = "9";
+
+        public Numeral9(Canculator canculator)
         {
+            this.canculator = canculator;
+        }
 
-
+        public void Executive(Keys key)
+        {
+            if (key == Keys.NumPad9)
+            {
+                canculator.AddInBuffer(symbol);
+            }
         }
     }
 }

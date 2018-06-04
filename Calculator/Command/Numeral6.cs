@@ -1,17 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Windows.Forms;
 
 namespace Calculator.Command
 {
-    class Numeral6 : ICommand
+    internal class Numeral6 : ICommand
     {
-        public void Executive(ConsoleKeyInfo key)
+        private Canculator canculator;
+        private string symbol = "6";
+
+        public Numeral6(Canculator canculator)
         {
+            this.canculator = canculator;
+        }
 
-
+        public void Executive(Keys key)
+        {
+            if (key == Keys.NumPad6)
+            {
+                canculator.AddInBuffer(symbol);
+            }
         }
     }
 }
