@@ -1,29 +1,20 @@
 ﻿using Calculator.Command;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Calculator
 {
     public partial class Canculator : Form
     {
+        private IList<string> arithmeticOperations = new List<string>();
         private string bufferString;
         private IList<ICommand> commands = new List<ICommand>();
-
-        private IList<string> arithmeticOperations = new List<string>();
 
         public Canculator()
         {
             InitializeComponent();
             Initialization();
-
-
         }
 
         private void Numeral2_Click(object sender, EventArgs e)
@@ -48,27 +39,80 @@ namespace Calculator
 
         private void Equally_Click(object sender, EventArgs e)
         {
-            //buffer.Text = "f";
-            //StringBuilder copyBuffer = new StringBuilder(buffer.Text);
+            if (conclusion.Text.Length > 0 && buffer.Text.Length > 0)
+            {
+                buffer.Text = string.Concat(buffer.Text, conclusion.Text);
+                conclusion.Text = null;
+                string copyBuffer = buffer.Text;
+                double result = 0;
+                char[] operations = new char[arithmeticOperations.Count];
+                int startIndex = 0;
+                IList<double> WholeNumbers = new List<double>();
 
-            //for(int i=0;i<copyBuffer.Length;i++)
-            //{
-            //    if (!char.IsNumber(Convert.ToChar(copyBuffer[i])))
-            //    {
-            //        foreach (string item in arithmeticOperations)
-            //        {
-            //            if (copyBuffer[i] == Convert.ToChar(item))
-            //            {
+                for (int i = 0; i < operations.Length; i++)
+                {
+                    operations[i] = Convert.ToChar(arithmeticOperations[i]);
+                }
 
-            //            }
-            //        }
-            //    }
+                for (int i = 0; i < buffer.Text.Length; i++)
+                {
+                    for (int j = 0; j < operations.Length; j++)
+                    {
+                        if (buffer.Text[i] == operations[j])
+                        {
+                            string substring = buffer.Text.Substring(startIndex, i);
+                            buffer.Text = buffer.Text.Remove(startIndex, i);
+                            i -= i;
+                            startIndex = i;
+                            WholeNumbers.Add(double.Parse(substring));
+                        }
+                    }
+                }
 
+                buffer.Text = buffer.Text.Remove(0, 1);
+                WholeNumbers.Add(double.Parse(buffer.Text));
+                result = WholeNumbers[0];
 
-            //}
+                for (int j = 1; j < WholeNumbers.Count; j++)
+                {
+                    for (int i = 0; i < copyBuffer.Length; i++)
+                    {
+                        if (copyBuffer[i] == '+')
+                        {
+                            result += WholeNumbers[j];
+                        }
 
+                        if (copyBuffer[i] == '-')
+                        {
+                            result -= WholeNumbers[j];
+                        }
 
+                        if (copyBuffer[i] == '/')
+                        {
+                            result /= WholeNumbers[j];
+                        }
 
+                        if (copyBuffer[i] == '*')
+                        {
+                            result *= WholeNumbers[j];
+                        }
+                    }
+                }
+
+                conclusion.Text = result.ToString();
+                buffer.Text = null;
+
+                if (conclusion.Text.Length == 1)
+                {
+                    if (conclusion.Text[0] == '0')
+                    {
+                        divide.Enabled = false;
+                        multiply.Enabled = false;
+                        minus.Enabled = false;
+                        add.Enabled = false;
+                    }
+                }
+            }
         }
 
         private void Numeral1_Click(object sender, EventArgs e)
@@ -76,15 +120,11 @@ namespace Calculator
             AddInBuffer("1");
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void Clear_Click(object sender, EventArgs e)
         {
             bufferString = null;
-            label1.Text = bufferString;
+            conclusion.Text = bufferString;
+
             if (bufferString == null)
             {
                 divide.Enabled = false;
@@ -116,15 +156,10 @@ namespace Calculator
 
         private void Numeral0_Click(object sender, EventArgs e)
         {
-            if (bufferString != null)
+            if (conclusion.Text.Length > 0)
             {
                 AddInBuffer("0");
             }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void divide_Click(object sender, EventArgs e)
@@ -149,7 +184,7 @@ namespace Calculator
 
         private void Canculator_KeyDown(object sender, KeyEventArgs e)
         {
-            foreach(ICommand command in commands)
+            foreach (ICommand command in commands)
             {
                 command.Executive(e.KeyCode);
             }
@@ -157,7 +192,15 @@ namespace Calculator
 
         public void AddInBuffer(string symbol)
         {
-            if (label1.Text != null)
+            if (conclusion.Text.Length == 1)
+            {
+                if (conclusion.Text[0] == '0')
+                {
+                    conclusion.Text = null;
+                }
+            }
+
+            if (conclusion.Text != null)
             {
                 divide.Enabled = true;
                 multiply.Enabled = true;
@@ -184,15 +227,14 @@ namespace Calculator
 
             if (@is)
             {
-                label1.Text = string.Concat(label1.Text, symbol);
-                buffer.Text = string.Concat(buffer.Text, label1.Text);
-                label1.Text = null;
+                conclusion.Text = string.Concat(conclusion.Text, symbol);
+                buffer.Text = string.Concat(buffer.Text, conclusion.Text);
+                conclusion.Text = null;
             }
             else
             {
-                label1.Text = string.Concat(label1.Text, symbol);
+                conclusion.Text = string.Concat(conclusion.Text, symbol);
             }
-            Console.Beep();
         }
 
         public void Initialization()

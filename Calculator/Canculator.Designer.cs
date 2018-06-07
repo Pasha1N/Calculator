@@ -44,7 +44,7 @@
             this.add = new System.Windows.Forms.Button();
             this.minus = new System.Windows.Forms.Button();
             this.numeral3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.conclusion = new System.Windows.Forms.Label();
             this.buffer = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -67,7 +67,7 @@
             this.numeral1.Location = new System.Drawing.Point(5, 77);
             this.numeral1.Name = "numeral1";
             this.numeral1.Size = new System.Drawing.Size(75, 35);
-            this.numeral1.TabIndex = 3;
+            this.numeral1.TabIndex = 1;
             this.numeral1.Text = "1";
             this.numeral1.UseVisualStyleBackColor = true;
             this.numeral1.Click += new System.EventHandler(this.Numeral1_Click);
@@ -116,7 +116,7 @@
             this.clear.Location = new System.Drawing.Point(5, 200);
             this.clear.Name = "clear";
             this.clear.Size = new System.Drawing.Size(75, 35);
-            this.clear.TabIndex = 7;
+            this.clear.TabIndex = 13;
             this.clear.Text = "CE";
             this.clear.UseVisualStyleBackColor = true;
             this.clear.Click += new System.EventHandler(this.Clear_Click);
@@ -128,7 +128,7 @@
             this.numeral7.Location = new System.Drawing.Point(5, 159);
             this.numeral7.Name = "numeral7";
             this.numeral7.Size = new System.Drawing.Size(75, 35);
-            this.numeral7.TabIndex = 8;
+            this.numeral7.TabIndex = 9;
             this.numeral7.Text = "7";
             this.numeral7.UseVisualStyleBackColor = true;
             this.numeral7.Click += new System.EventHandler(this.Numeral7_Click);
@@ -140,7 +140,7 @@
             this.numeral8.Location = new System.Drawing.Point(86, 159);
             this.numeral8.Name = "numeral8";
             this.numeral8.Size = new System.Drawing.Size(75, 35);
-            this.numeral8.TabIndex = 9;
+            this.numeral8.TabIndex = 10;
             this.numeral8.Text = "8";
             this.numeral8.UseVisualStyleBackColor = true;
             this.numeral8.Click += new System.EventHandler(this.Numeral8_Click);
@@ -152,7 +152,7 @@
             this.numeral6.Location = new System.Drawing.Point(167, 118);
             this.numeral6.Name = "numeral6";
             this.numeral6.Size = new System.Drawing.Size(75, 35);
-            this.numeral6.TabIndex = 10;
+            this.numeral6.TabIndex = 7;
             this.numeral6.Text = "6";
             this.numeral6.UseVisualStyleBackColor = true;
             this.numeral6.Click += new System.EventHandler(this.Numeral6_Click);
@@ -165,7 +165,7 @@
             this.multiply.Location = new System.Drawing.Point(248, 118);
             this.multiply.Name = "multiply";
             this.multiply.Size = new System.Drawing.Size(75, 35);
-            this.multiply.TabIndex = 11;
+            this.multiply.TabIndex = 8;
             this.multiply.Text = "*";
             this.multiply.UseVisualStyleBackColor = true;
             this.multiply.Click += new System.EventHandler(this.multiply_Click);
@@ -177,7 +177,7 @@
             this.numeral0.Location = new System.Drawing.Point(86, 200);
             this.numeral0.Name = "numeral0";
             this.numeral0.Size = new System.Drawing.Size(75, 35);
-            this.numeral0.TabIndex = 12;
+            this.numeral0.TabIndex = 14;
             this.numeral0.Text = "0";
             this.numeral0.UseVisualStyleBackColor = true;
             this.numeral0.Click += new System.EventHandler(this.Numeral0_Click);
@@ -189,7 +189,7 @@
             this.numeral9.Location = new System.Drawing.Point(167, 159);
             this.numeral9.Name = "numeral9";
             this.numeral9.Size = new System.Drawing.Size(75, 35);
-            this.numeral9.TabIndex = 13;
+            this.numeral9.TabIndex = 11;
             this.numeral9.Text = "9";
             this.numeral9.UseVisualStyleBackColor = true;
             this.numeral9.Click += new System.EventHandler(this.Numeral9_Click);
@@ -202,7 +202,7 @@
             this.equally.Location = new System.Drawing.Point(167, 200);
             this.equally.Name = "equally";
             this.equally.Size = new System.Drawing.Size(75, 35);
-            this.equally.TabIndex = 14;
+            this.equally.TabIndex = 15;
             this.equally.Text = "=";
             this.equally.UseVisualStyleBackColor = true;
             this.equally.Click += new System.EventHandler(this.Equally_Click);
@@ -215,7 +215,7 @@
             this.add.Location = new System.Drawing.Point(248, 200);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(75, 35);
-            this.add.TabIndex = 15;
+            this.add.TabIndex = 16;
             this.add.Text = "+";
             this.add.UseVisualStyleBackColor = true;
             this.add.Click += new System.EventHandler(this.add_Click);
@@ -228,7 +228,7 @@
             this.minus.Location = new System.Drawing.Point(248, 159);
             this.minus.Name = "minus";
             this.minus.Size = new System.Drawing.Size(75, 35);
-            this.minus.TabIndex = 16;
+            this.minus.TabIndex = 12;
             this.minus.Text = "-";
             this.minus.UseVisualStyleBackColor = true;
             this.minus.Click += new System.EventHandler(this.minus_Click);
@@ -240,22 +240,21 @@
             this.numeral3.Location = new System.Drawing.Point(167, 77);
             this.numeral3.Name = "numeral3";
             this.numeral3.Size = new System.Drawing.Size(75, 35);
-            this.numeral3.TabIndex = 18;
+            this.numeral3.TabIndex = 3;
             this.numeral3.Text = "3";
             this.numeral3.UseVisualStyleBackColor = true;
             this.numeral3.Click += new System.EventHandler(this.Numeral3_Click);
             // 
-            // label1
+            // conclusion
             // 
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(5, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(318, 27);
-            this.label1.TabIndex = 19;
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            this.conclusion.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.conclusion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.conclusion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.conclusion.Location = new System.Drawing.Point(5, 47);
+            this.conclusion.Name = "conclusion";
+            this.conclusion.Size = new System.Drawing.Size(318, 27);
+            this.conclusion.TabIndex = 19;
+            this.conclusion.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // buffer
             // 
@@ -264,7 +263,7 @@
             this.buffer.Location = new System.Drawing.Point(5, 9);
             this.buffer.Name = "buffer";
             this.buffer.Size = new System.Drawing.Size(318, 38);
-            this.buffer.TabIndex = 20;
+            this.buffer.TabIndex = 0;
             this.buffer.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // Canculator
@@ -272,7 +271,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(328, 239);
             this.Controls.Add(this.buffer);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.conclusion);
             this.Controls.Add(this.numeral3);
             this.Controls.Add(this.minus);
             this.Controls.Add(this.add);
@@ -294,7 +293,6 @@
             this.Name = "Canculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Canculator_KeyDown);
             this.ResumeLayout(false);
 
@@ -317,7 +315,7 @@
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Button minus;
         private System.Windows.Forms.Button numeral3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label conclusion;
         private System.Windows.Forms.Label buffer;
     }
 }
