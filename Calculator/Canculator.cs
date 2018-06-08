@@ -93,18 +93,15 @@ namespace Calculator
                         {
                             result += WholeNumbers[j];
                         }
-
-                        if (copyBuffer[i] == '-')
+                        else if (copyBuffer[i] == '-')
                         {
                             result -= WholeNumbers[j];
                         }
-
-                        if (copyBuffer[i] == '/')
+                        else if (copyBuffer[i] == '/')
                         {
                             result /= WholeNumbers[j];
                         }
-
-                        if (copyBuffer[i] == '*')
+                        else if (copyBuffer[i] == '*')
                         {
                             result *= WholeNumbers[j];
                         }
