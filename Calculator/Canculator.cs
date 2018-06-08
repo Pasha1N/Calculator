@@ -9,7 +9,7 @@ namespace Calculator
     {
         private IList<string> arithmeticOperations = new List<string>();
         private string bufferString;
-        private IList<ICommand> commands = new List<ICommand>();
+        private ICollection<ICommand> commands = new List<ICommand>();
 
         public Canculator()
         {

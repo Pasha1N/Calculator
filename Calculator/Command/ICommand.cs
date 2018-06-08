@@ -2,7 +2,7 @@
 
 namespace Calculator.Command
 {
-   internal interface ICommand
+    internal interface ICommand
     {
         void Executive(Keys key);
     }
