@@ -17,24 +17,36 @@ namespace Calculator
             Initialization();
         }
 
-        private void Numeral2_Click(object sender, EventArgs e)
+        private void add_Click(object sender, EventArgs e)
         {
-            AddInBuffer("2");
+            AddInBuffer("+");
         }
 
-        private void Numeral6_Click(object sender, EventArgs e)
+        private void Canculator_KeyDown(object sender, KeyEventArgs e)
         {
-            AddInBuffer("6");
+            foreach (ICommand command in commands)
+            {
+                command.Executive(e.KeyCode);
+            }
         }
 
-        private void Numeral7_Click(object sender, EventArgs e)
+        private void Clear_Click(object sender, EventArgs e)
         {
-            AddInBuffer("7");
+            bufferString = null;
+            conclusion.Text = bufferString;
+
+            if (bufferString == null)
+            {
+                divide.Enabled = false;
+                multiply.Enabled = false;
+                minus.Enabled = false;
+                add.Enabled = false;
+            }
         }
 
-        private void Numeral9_Click(object sender, EventArgs e)
+        private void divide_Click(object sender, EventArgs e)
         {
-            AddInBuffer("9");
+            AddInBuffer("/");
         }
 
         private void Equally_Click(object sender, EventArgs e)
@@ -115,23 +127,32 @@ namespace Calculator
             }
         }
 
+        private void minus_Click(object sender, EventArgs e)
+        {
+            AddInBuffer("-");
+        }
+
+        private void multiply_Click(object sender, EventArgs e)
+        {
+            AddInBuffer("*");
+        }
+
+        private void Numeral0_Click(object sender, EventArgs e)
+        {
+            if (conclusion.Text.Length > 0)
+            {
+                AddInBuffer("0");
+            }
+        }
+
         private void Numeral1_Click(object sender, EventArgs e)
         {
             AddInBuffer("1");
         }
 
-        private void Clear_Click(object sender, EventArgs e)
+        private void Numeral2_Click(object sender, EventArgs e)
         {
-            bufferString = null;
-            conclusion.Text = bufferString;
-
-            if (bufferString == null)
-            {
-                divide.Enabled = false;
-                multiply.Enabled = false;
-                minus.Enabled = false;
-                add.Enabled = false;
-            }
+            AddInBuffer("2");
         }
 
         private void Numeral3_Click(object sender, EventArgs e)
@@ -149,45 +170,24 @@ namespace Calculator
             AddInBuffer("5");
         }
 
+        private void Numeral6_Click(object sender, EventArgs e)
+        {
+            AddInBuffer("6");
+        }
+
+        private void Numeral7_Click(object sender, EventArgs e)
+        {
+            AddInBuffer("7");
+        }
+
         private void Numeral8_Click(object sender, EventArgs e)
         {
             AddInBuffer("8");
         }
 
-        private void Numeral0_Click(object sender, EventArgs e)
+        private void Numeral9_Click(object sender, EventArgs e)
         {
-            if (conclusion.Text.Length > 0)
-            {
-                AddInBuffer("0");
-            }
-        }
-
-        private void divide_Click(object sender, EventArgs e)
-        {
-            AddInBuffer("/");
-        }
-
-        private void multiply_Click(object sender, EventArgs e)
-        {
-            AddInBuffer("*");
-        }
-
-        private void minus_Click(object sender, EventArgs e)
-        {
-            AddInBuffer("-");
-        }
-
-        private void add_Click(object sender, EventArgs e)
-        {
-            AddInBuffer("+");
-        }
-
-        private void Canculator_KeyDown(object sender, KeyEventArgs e)
-        {
-            foreach (ICommand command in commands)
-            {
-                command.Executive(e.KeyCode);
-            }
+            AddInBuffer("9");
         }
 
         public void AddInBuffer(string symbol)
