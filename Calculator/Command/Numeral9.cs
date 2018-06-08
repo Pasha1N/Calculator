@@ -14,7 +14,7 @@ namespace Calculator.Command
 
         public void Executive(Keys key)
         {
-            if (key == Keys.NumPad9)
+            if (key == Keys.NumPad9 || key == Keys.D9)
             {
                 canculator.AddInBuffer(symbol);
             }
