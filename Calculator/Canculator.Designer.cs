@@ -83,7 +83,7 @@
             this.divide.TabIndex = 4;
             this.divide.Text = "/";
             this.divide.UseVisualStyleBackColor = true;
-            this.divide.Click += new System.EventHandler(this.divide_Click);
+            this.divide.Click += new System.EventHandler(this.divideClick);
             // 
             // numeral4
             // 
@@ -119,7 +119,7 @@
             this.clear.TabIndex = 13;
             this.clear.Text = "CE";
             this.clear.UseVisualStyleBackColor = true;
-            this.clear.Click += new System.EventHandler(this.Clear_Click);
+            this.clear.Click += new System.EventHandler(this.ClearClick);
             // 
             // numeral7
             // 
@@ -168,7 +168,7 @@
             this.multiply.TabIndex = 8;
             this.multiply.Text = "*";
             this.multiply.UseVisualStyleBackColor = true;
-            this.multiply.Click += new System.EventHandler(this.multiply_Click);
+            this.multiply.Click += new System.EventHandler(this.multiplyClick);
             // 
             // numeral0
             // 
@@ -205,7 +205,7 @@
             this.equally.TabIndex = 15;
             this.equally.Text = "=";
             this.equally.UseVisualStyleBackColor = true;
-            this.equally.Click += new System.EventHandler(this.Equally_Click);
+            this.equally.Click += new System.EventHandler(this.EquallyClick);
             // 
             // add
             // 
@@ -231,7 +231,7 @@
             this.minus.TabIndex = 12;
             this.minus.Text = "-";
             this.minus.UseVisualStyleBackColor = true;
-            this.minus.Click += new System.EventHandler(this.minus_Click);
+            this.minus.Click += new System.EventHandler(this.minusClick);
             // 
             // numeral3
             // 

@@ -30,7 +30,7 @@ namespace Calculator
             }
         }
 
-        private void Clear_Click(object sender, EventArgs e)
+        private void ClearClick(object sender, EventArgs e)
         {
             bufferString = null;
             conclusion.Text = bufferString;
@@ -44,12 +44,12 @@ namespace Calculator
             }
         }
 
-        private void divide_Click(object sender, EventArgs e)
+        private void divideClick(object sender, EventArgs e)
         {
             AddInBuffer("/");
         }
 
-        private void Equally_Click(object sender, EventArgs e)
+        private void EquallyClick(object sender, EventArgs e)
         {
             if (conclusion.Text.Length > 0 && buffer.Text.Length > 0)
             {
@@ -124,12 +124,12 @@ namespace Calculator
             }
         }
 
-        private void minus_Click(object sender, EventArgs e)
+        private void minusClick(object sender, EventArgs e)
         {
             AddInBuffer("-");
         }
 
-        private void multiply_Click(object sender, EventArgs e)
+        private void multiplyClick(object sender, EventArgs e)
         {
             AddInBuffer("*");
         }
