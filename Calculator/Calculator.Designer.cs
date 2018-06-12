@@ -255,6 +255,7 @@
             this.conclusion.Size = new System.Drawing.Size(318, 27);
             this.conclusion.TabIndex = 19;
             this.conclusion.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.conclusion.TextChanged += new System.EventHandler(this.conclusion_TextChanged);
             // 
             // buffer
             // 
@@ -266,7 +267,7 @@
             this.buffer.TabIndex = 0;
             this.buffer.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
-            // Canculator
+            // Calculator
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(328, 239);
@@ -290,7 +291,7 @@
             this.Controls.Add(this.numeral2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.KeyPreview = true;
-            this.Name = "Canculator";
+            this.Name = "Calculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Canculator_KeyDown);

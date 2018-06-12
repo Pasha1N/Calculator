@@ -110,17 +110,14 @@ namespace Calculator
 
                 conclusion.Text = result.ToString();
                 buffer.Text = null;
+                equally.Enabled = false;
 
-                if (conclusion.Text.Length == 1)
-                {
-                    if (conclusion.Text[0] == '0')
-                    {
-                        divide.Enabled = false;
-                        multiply.Enabled = false;
-                        minus.Enabled = false;
-                        add.Enabled = false;
-                    }
-                }
+                divide.Enabled = false;
+                multiply.Enabled = false;
+                minus.Enabled = false;
+                add.Enabled = false;
+
+                Tag = true;
             }
         }
 
@@ -136,10 +133,7 @@ namespace Calculator
 
         private void Numeral0_Click(object sender, EventArgs e)
         {
-            if (conclusion.Text.Length > 0)
-            {
                 AddInBuffer("0");
-            }
         }
 
         private void Numeral1_Click(object sender, EventArgs e)
@@ -189,12 +183,10 @@ namespace Calculator
 
         public void AddInBuffer(string symbol)
         {
-            if (conclusion.Text.Length == 1)
+            if(Tag!=null)
             {
-                if (conclusion.Text[0] == '0')
-                {
-                    conclusion.Text = null;
-                }
+                conclusion = null;
+                Tag = null;
             }
 
             if (conclusion.Text != null)
@@ -203,11 +195,6 @@ namespace Calculator
                 multiply.Enabled = true;
                 minus.Enabled = true;
                 add.Enabled = true;
-            }
-
-            if (buffer.Text != null)
-            {
-                equally.Enabled = true;
             }
 
             bool @is = false;
@@ -227,6 +214,11 @@ namespace Calculator
                 conclusion.Text = string.Concat(conclusion.Text, symbol);
                 buffer.Text = string.Concat(buffer.Text, conclusion.Text);
                 conclusion.Text = null;
+
+                divide.Enabled = false;
+                multiply.Enabled = false;
+                minus.Enabled = false;
+                add.Enabled = false;
             }
             else
             {
@@ -270,6 +262,18 @@ namespace Calculator
             commands.Add(divide);
             commands.Add(multiply);
             commands.Add(Subtraction);
+        }
+
+        private void conclusion_TextChanged(object sender, EventArgs e)
+        {
+            if (buffer.Text.Length > 0 && conclusion.Text.Length >= 1)
+            {
+                equally.Enabled = true;
+            }
+            else
+            {
+                equally.Enabled = false;
+            }
         }
     }
 }
