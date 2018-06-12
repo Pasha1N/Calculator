@@ -4,19 +4,19 @@ namespace Calculator.Command
 {
     internal class Multiply : ICommand
     {
-        private Canculator canculator;
+        private Calculator calculator;
         private string symbol = "*";
 
-        public Multiply(Canculator canculator)
+        public Multiply(Calculator canculator)
         {
-            this.canculator = canculator;
+            this.calculator = canculator;
         }
 
         public void Executive(Keys key)
         {
             if (key == Keys.Multiply)
             {
-                canculator.AddInBuffer(symbol);
+                calculator.AddInBuffer(symbol);
             }
         }
     }

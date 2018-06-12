@@ -4,19 +4,19 @@ namespace Calculator.Command
 {
     internal class Add : ICommand
     {
-        private Canculator canculator;
+        private Calculator calculator;
         private string symbol = "+";
 
-        public Add(Canculator canculator)
+        public Add(Calculator canculator)
         {
-            this.canculator = canculator;
+            this.calculator = canculator;
         }
 
         public void Executive(Keys key)
         {
             if (key == Keys.Add)
             {
-                canculator.AddInBuffer(symbol);
+                calculator.AddInBuffer(symbol);
             }
         }
     }

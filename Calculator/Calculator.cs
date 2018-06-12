@@ -5,13 +5,13 @@ using System.Windows.Forms;
 
 namespace Calculator
 {
-    public partial class Canculator : Form
+    public partial class Calculator : Form
     {
         private IList<string> arithmeticOperations = new List<string>();
         private string bufferString;
         private ICollection<ICommand> commands = new List<ICommand>();
 
-        public Canculator()
+        public Calculator()
         {
             InitializeComponent();
             Initialization();

@@ -4,19 +4,19 @@ namespace Calculator.Command
 {
     internal class Divide : ICommand
     {
-        private Canculator canculator;
+        private Calculator calculator;
         private string symbol = "/";
 
-        public Divide(Canculator canculator)
+        public Divide(Calculator canculator)
         {
-            this.canculator = canculator;
+            this.calculator = canculator;
         }
 
         public void Executive(Keys key)
         {
             if (key == Keys.Divide)
             {
-                canculator.AddInBuffer(symbol);
+                calculator.AddInBuffer(symbol);
             }
         }
     }

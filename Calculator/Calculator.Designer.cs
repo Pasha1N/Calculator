@@ -1,6 +1,6 @@
 ﻿namespace Calculator
 {
-    partial class Canculator
+    partial class Calculator
     {
         /// <summary>
         /// Обязательная переменная конструктора.

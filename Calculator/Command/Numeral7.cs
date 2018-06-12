@@ -4,19 +4,19 @@ namespace Calculator.Command
 {
     internal class Numeral7 : ICommand
     {
-        private Canculator canculator;
+        private Calculator calculator;
         private string symbol = "7";
 
-        public Numeral7(Canculator canculator)
+        public Numeral7(Calculator canculator)
         {
-            this.canculator = canculator;
+            this.calculator = canculator;
         }
 
         public void Executive(Keys key)
         {
             if (key == Keys.NumPad7 || key == Keys.D7)
             {
-                canculator.AddInBuffer(symbol);
+                calculator.AddInBuffer(symbol);
             }
         }
     }
