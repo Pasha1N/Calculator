@@ -17,6 +17,14 @@ namespace Calculator
             Initialization();
         }
 
+        public bool AddEnabled => add.Enabled;
+
+        public bool DivideEnabled => divide.Enabled;
+
+        public bool MultiplyEnabled => multiply.Enabled;
+
+        public bool MinusEnabled => minus.Enabled;
+
         private void add_Click(object sender, EventArgs e)
         {
             AddInBuffer("+");
@@ -185,7 +193,7 @@ namespace Calculator
         {
             if(Tag!=null)
             {
-                conclusion = null;
+                conclusion.Text = null;
                 Tag = null;
             }
 

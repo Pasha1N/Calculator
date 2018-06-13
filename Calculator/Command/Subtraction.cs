@@ -14,7 +14,7 @@ namespace Calculator.Command
 
         public void Executive(Keys key)
         {
-            if (key == Keys.Subtract)
+            if (key == Keys.Subtract&&calculator.MinusEnabled)
             {
                 calculator.AddInBuffer(symbol);
             }

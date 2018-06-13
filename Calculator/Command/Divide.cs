@@ -14,7 +14,7 @@ namespace Calculator.Command
 
         public void Executive(Keys key)
         {
-            if (key == Keys.Divide)
+            if (key == Keys.Divide&&calculator.DivideEnabled)
             {
                 calculator.AddInBuffer(symbol);
             }
