@@ -25,7 +25,7 @@ namespace Calculator
 
         public bool MinusEnabled => minus.Enabled;
 
-        private void add_Click(object sender, EventArgs e)
+        private void Add_Click(object sender, EventArgs e)
         {
             AddInBuffer("+");
         }
@@ -38,7 +38,7 @@ namespace Calculator
             }
         }
 
-        private void conclusion_TextChanged(object sender, EventArgs e)
+        private void Conclusion_TextChanged(object sender, EventArgs e)
         {
             if (buffer.Text.Length > 0 && conclusion.Text.Length >= 1)
             {
@@ -50,7 +50,7 @@ namespace Calculator
             }
         }
 
-        private void ClearClick(object sender, EventArgs e)
+        private void Clear_Click(object sender, EventArgs e)
         {
             bufferString = null;
             conclusion.Text = bufferString;
@@ -64,12 +64,12 @@ namespace Calculator
             }
         }
 
-        private void divideClick(object sender, EventArgs e)
+        private void Divide_Click(object sender, EventArgs e)
         {
             AddInBuffer("/");
         }
 
-        private void EquallyClick(object sender, EventArgs e)
+        private void Equally_Click(object sender, EventArgs e)
         {
             if (conclusion.Text.Length > 0 && buffer.Text.Length > 0)
             {
@@ -141,12 +141,12 @@ namespace Calculator
             }
         }
 
-        private void minusClick(object sender, EventArgs e)
+        private void Minus_Click(object sender, EventArgs e)
         {
             AddInBuffer("-");
         }
 
-        private void multiplyClick(object sender, EventArgs e)
+        private void Multiply_Click(object sender, EventArgs e)
         {
             AddInBuffer("*");
         }

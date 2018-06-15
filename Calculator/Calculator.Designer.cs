@@ -83,7 +83,7 @@
             this.divide.TabIndex = 4;
             this.divide.Text = "/";
             this.divide.UseVisualStyleBackColor = true;
-            this.divide.Click += new System.EventHandler(this.divideClick);
+            this.divide.Click += new System.EventHandler(this.Divide_Click);
             // 
             // numeral4
             // 
@@ -119,7 +119,7 @@
             this.clear.TabIndex = 13;
             this.clear.Text = "CE";
             this.clear.UseVisualStyleBackColor = true;
-            this.clear.Click += new System.EventHandler(this.ClearClick);
+            this.clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // numeral7
             // 
@@ -168,7 +168,7 @@
             this.multiply.TabIndex = 8;
             this.multiply.Text = "*";
             this.multiply.UseVisualStyleBackColor = true;
-            this.multiply.Click += new System.EventHandler(this.multiplyClick);
+            this.multiply.Click += new System.EventHandler(this.Multiply_Click);
             // 
             // numeral0
             // 
@@ -205,7 +205,7 @@
             this.equally.TabIndex = 15;
             this.equally.Text = "=";
             this.equally.UseVisualStyleBackColor = true;
-            this.equally.Click += new System.EventHandler(this.EquallyClick);
+            this.equally.Click += new System.EventHandler(this.Equally_Click);
             // 
             // add
             // 
@@ -218,7 +218,7 @@
             this.add.TabIndex = 16;
             this.add.Text = "+";
             this.add.UseVisualStyleBackColor = true;
-            this.add.Click += new System.EventHandler(this.add_Click);
+            this.add.Click += new System.EventHandler(this.Add_Click);
             // 
             // minus
             // 
@@ -231,7 +231,7 @@
             this.minus.TabIndex = 12;
             this.minus.Text = "-";
             this.minus.UseVisualStyleBackColor = true;
-            this.minus.Click += new System.EventHandler(this.minusClick);
+            this.minus.Click += new System.EventHandler(this.Minus_Click);
             // 
             // numeral3
             // 
@@ -255,7 +255,7 @@
             this.conclusion.Size = new System.Drawing.Size(318, 27);
             this.conclusion.TabIndex = 19;
             this.conclusion.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.conclusion.TextChanged += new System.EventHandler(this.conclusion_TextChanged);
+            this.conclusion.TextChanged += new System.EventHandler(this.Conclusion_TextChanged);
             // 
             // buffer
             // 
