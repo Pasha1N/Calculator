@@ -38,6 +38,18 @@ namespace Calculator
             }
         }
 
+        private void conclusion_TextChanged(object sender, EventArgs e)
+        {
+            if (buffer.Text.Length > 0 && conclusion.Text.Length >= 1)
+            {
+                equally.Enabled = true;
+            }
+            else
+            {
+                equally.Enabled = false;
+            }
+        }
+
         private void ClearClick(object sender, EventArgs e)
         {
             bufferString = null;
@@ -270,18 +282,6 @@ namespace Calculator
             commands.Add(divide);
             commands.Add(multiply);
             commands.Add(Subtraction);
-        }
-
-        private void conclusion_TextChanged(object sender, EventArgs e)
-        {
-            if (buffer.Text.Length > 0 && conclusion.Text.Length >= 1)
-            {
-                equally.Enabled = true;
-            }
-            else
-            {
-                equally.Enabled = false;
-            }
         }
     }
 }
