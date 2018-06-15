@@ -7,7 +7,7 @@ namespace Calculator
 {
     public partial class Calculator : Form
     {
-        private IList<string> arithmeticOperations = new List<string>();
+        private ICollection<string> arithmeticOperations = new List<string>();
         private string bufferString;
         private ICollection<ICommand> commands = new List<ICommand>();
 
@@ -65,20 +65,20 @@ namespace Calculator
                 conclusion.Text = null;
                 string copyBuffer = buffer.Text;
                 double result = 0;
-                char[] operations = new char[arithmeticOperations.Count];
+                ICollection<char> operations = new List<char>();
                 int startIndex = 0;
                 IList<double> WholeNumbers = new List<double>();
 
-                for (int i = 0; i < operations.Length; i++)
+                foreach (string arithmeticOperation in arithmeticOperations)
                 {
-                    operations[i] = Convert.ToChar(arithmeticOperations[i]);
+                    operations.Add(Convert.ToChar(arithmeticOperation));
                 }
 
                 for (int i = 0; i < buffer.Text.Length; i++)
                 {
-                    for (int j = 0; j < operations.Length; j++)
+                    foreach (char operation in operations)
                     {
-                        if (buffer.Text[i] == operations[j])
+                        if (buffer.Text[i] == operation)
                         {
                             string substring = buffer.Text.Substring(startIndex, i);
                             buffer.Text = buffer.Text.Remove(startIndex, i);
@@ -141,7 +141,7 @@ namespace Calculator
 
         private void Numeral0_Click(object sender, EventArgs e)
         {
-                AddInBuffer("0");
+            AddInBuffer("0");
         }
 
         private void Numeral1_Click(object sender, EventArgs e)
@@ -191,7 +191,7 @@ namespace Calculator
 
         public void AddInBuffer(string symbol)
         {
-            if(Tag!=null)
+            if (Tag != null)
             {
                 conclusion.Text = null;
                 Tag = null;
