@@ -30,7 +30,7 @@ namespace Calculator
             AddInBuffer("+");
         }
 
-        private void Canculator_KeyDown(object sender, KeyEventArgs e)
+        private void Calculator_KeyDown(object sender, KeyEventArgs e)
         {
             foreach (ICommand command in commands)
             {

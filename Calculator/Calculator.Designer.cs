@@ -294,7 +294,7 @@
             this.Name = "Calculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Canculator_KeyDown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Calculator_KeyDown);
             this.ResumeLayout(false);
 
         }
