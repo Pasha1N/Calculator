@@ -7,9 +7,9 @@ namespace Calculator.Command
         private Calculator calculator;
         private string symbol = "-";
 
-        public Subtraction(Calculator canculator)
+        public Subtraction(Calculator calculator)
         {
-            this.calculator = canculator;
+            this.calculator = calculator;
         }
 
         public void Executive(Keys key)

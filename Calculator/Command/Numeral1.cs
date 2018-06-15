@@ -7,9 +7,9 @@ namespace Calculator.Command
         private Calculator calculator;
         private string symbol = "1";
 
-        public Numeral1(Calculator canculator)
+        public Numeral1(Calculator calculator)
         {
-            this.calculator = canculator;
+            this.calculator = calculator;
         }
 
         public void Executive(Keys key)

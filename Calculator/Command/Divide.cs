@@ -7,9 +7,9 @@ namespace Calculator.Command
         private Calculator calculator;
         private string symbol = "/";
 
-        public Divide(Calculator canculator)
+        public Divide(Calculator calculator)
         {
-            this.calculator = canculator;
+            this.calculator = calculator;
         }
 
         public void Executive(Keys key)
